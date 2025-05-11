@@ -3,7 +3,7 @@ name: Ezone - PR - Front
 on:
   pull_request:
     branches:
-      - main
+      - develop
 
 jobs:
   build:
