@@ -1,4 +1,4 @@
-name: Ezone - PR - Front
+name: PCE - PR - Front
 
 on:
   pull_request:
