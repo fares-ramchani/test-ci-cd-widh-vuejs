@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { service } from '@/core/services/axios/service';
-const users = ref([]);
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  createdAt: string;
+}
+const users = ref<User[]>([]);
 
 onMounted(async () => {
   try {
