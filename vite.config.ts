@@ -27,6 +27,8 @@ export default defineConfig({
     },
   },
   server: {
+    host: '0.0.0.0',
+    port: 5173,
     proxy: {
       '/rms/api': {
         target: process.env.VITE_API_BASE_URL, // Proxy to the backend server

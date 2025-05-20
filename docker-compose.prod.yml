@@ -1,0 +1,12 @@
+version: '3'
+services:
+  client-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - '5173:5173'
+    env_file:
+      - .env.production
+    environment:
+      - NODE_ENV=production
