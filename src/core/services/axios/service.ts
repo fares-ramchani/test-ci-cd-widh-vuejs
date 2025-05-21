@@ -1,7 +1,7 @@
 import { Api } from '../mapping/index';
 
 export const service = new Api({
-  baseUrl: import.meta.env.VITE_API_BASE_URL,
+  baseUrl: 'http://145.239.198.96:3005',
   baseApiParams: {
     credentials: 'include',
   },
