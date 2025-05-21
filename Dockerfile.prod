@@ -1,31 +1,22 @@
 # Étape 1 : Build du frontend
 FROM node:20-alpine AS builder
-
-# Installation de dépendances système minimales
 RUN apk add --no-cache libc6-compat
-
 WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
 
 COPY . .
+COPY .env.production .env
+
 RUN npm run build
 
 # Étape 2 : Image de production légère
 FROM node:20-alpine AS production
-
 WORKDIR /app
-
-# Installer uniquement les dépendances de production
 COPY package*.json ./
 RUN npm install --omit=dev
-
-# Serveur HTTP minimal
 RUN npm install -g serve
-
-# Copier le build final
 COPY --from=builder /app/dist ./dist
-
 EXPOSE 5173
 CMD ["serve", "-s", "dist", "-l", "5173"]
