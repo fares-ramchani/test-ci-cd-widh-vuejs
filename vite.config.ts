@@ -27,7 +27,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0',
+    host: '145.239.198.96',
     port: 5173,
     proxy: {
       '/rms/api': {
