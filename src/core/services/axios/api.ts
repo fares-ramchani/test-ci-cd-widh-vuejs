@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create Axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL, // Dynamically loaded from environment variables
+  baseURL: 'http://145.239.198.96:3005', // Dynamically loaded from environment variables
   headers: {
     'Content-Type': 'application/json',
   },
